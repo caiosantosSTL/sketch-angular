@@ -1,0 +1,21 @@
+<div class="p-4" style="background-color: rgb(184, 222, 255);">
+    <p>novo-comp works!</p>
+    <h1 [style.background]="idade >= 18 ? '#abed93' : '#edb393' " >Sua idade eh {{idade}}</h1>
+
+    <div *ngIf="idade < 18">
+        <p>Nao pode passar</p>
+    </div>
+    <div *ngIf="idade >= 18">
+        <p>Um adulto</p>
+    </div>
+
+    <button class="btn btn-primary me-2" (click)="subirIdade()">Subir idade</button>
+    <button class="btn btn-primary me-2" (click)="cairIdade()">Cair idade</button>
+
+    <div class="mt-5">
+        <p>Eis a lista de veiculos</p>
+        <ul>
+            <li *ngFor="let veiculo of veiculos; let indexs = index">{{veiculo +' --- ' + indexs}}</li>
+        </ul>
+    </div>
+</div>
